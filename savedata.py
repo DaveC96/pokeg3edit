@@ -3,7 +3,7 @@
 
 class Datablock:
     MAXSIZE = 3968
-    def __init__(self, blockid: int, blockname: str, offset: int, length: int)
+    def __init__(self, blockid: int, blockname: str, offset: int, length: int):
         self.id     = blockid
         self.name   = blockname
         self.offset = offset
@@ -53,6 +53,7 @@ class Data_rivalinfo(Datablock):
 class Data_pcbuffer(Datablock):
     def __init__(self):
         super().__init__()
+        self.memorymap = {
         #   Attribute Name      Offset      Size (bytes)
             "currentbox"    :   [0x0000,    4   ],
             "box_a_contents":   [0xDEAD,    3968],      #TODO
